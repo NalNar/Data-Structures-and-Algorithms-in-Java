@@ -1,0 +1,26 @@
+package pkg02;
+
+
+/**
+ * Write a Java program that simulates a system that supports the functions of an e-
+book reader. You should include methods for users of your system to “buy” new
+books, view their list of purchased books, and read their purchased books. Your
+system should use actual books, which have expired copyrights and are available
+on the Internet, to populate your set of available books for users of your system
+to “purchase” and read.
+ */
+
+/**
+ * Need to add/delete book , view and purchase book, which would delete the book from the 
+ */
+
+public interface BookstoreInterface {
+    public void getUser();
+    public void makeNewUser();
+    public void buyBook();
+    public void viewBook();
+    public void addBook();
+    public void deleteBook();
+
+    
+}
