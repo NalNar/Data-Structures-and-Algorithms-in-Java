@@ -2,7 +2,9 @@ package pkg02;
 
 public abstract class BookstoreAbstract implements BookstoreInterface{
     
+    
     public void getUser(){
+
 
     }
 
