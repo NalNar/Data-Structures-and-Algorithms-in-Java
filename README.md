@@ -7,11 +7,9 @@ This repository documents my full journey through **Goodrich, Tamassia & Goldwas
 
 It includes:
 - Chapter-wise Java implementations  
-- Fully worked exercises  
-- Notes, intuition, and complexity analysis  
+- Worked exercises  
+- code comments, intuition, and analysis  
 - Visualizations & explanations  
-
-My goal is to deeply master DSA for interviews, coursework, and the NYU CS placement exam.
 
 ---
 
