@@ -7,10 +7,9 @@ This repository documents my full journey through **Goodrich, Tamassia & Goldwas
 
 It includes:
 - Chapter-wise Java implementations  
-- Fully worked exercises  
-- Code comments, intuition, and complexity analysis  
+- Worked exercises  
+- code comments, intuition, and analysis  
 - Visualizations & explanations  
-
 
 ---
 
