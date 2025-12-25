@@ -12,7 +12,6 @@ It includes:
 - Visualizations & explanations  
 
 ---
-
 ## Textbook Reference
 **Primary Source:**  
 *Data Structures and Algorithms in Java*  
