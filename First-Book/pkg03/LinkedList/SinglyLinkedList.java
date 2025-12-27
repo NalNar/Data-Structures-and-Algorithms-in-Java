@@ -1,4 +1,4 @@
-package pkg03;
+package pkg03.LinkedList;
 
 public class SinglyLinkedList<E> {
 
