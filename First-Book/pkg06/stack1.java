@@ -1,6 +1,8 @@
 package pkg06;
 // implement a stack using array
-
+/*cons of stack using array: it relies on fixed array capacity
+limiting the size of the stack 
+*/
 public class stack1<E> {
 
     public static final int CAPACITY = 1000; // array cap
@@ -37,9 +39,12 @@ public class stack1<E> {
         t--;
         return answer;
     }
-
-    
-
-
-    
+// sample run
+    public static void main(String[] args) {
+        stack1 <Integer> s = new stack1<>();
+        s.push(1);s.push(2);s.push(3);
+       for(int i =-1;i<=s.size();i++){
+        System.out.println(s.pop());
+       }
+    }
 }
