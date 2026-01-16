@@ -39,4 +39,64 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
         trailer = new Node<>(null,header,null);
         header.setNext(trailer);
     }
+    private Node<E> validate(Position<E> p) throws IllegalArgumentException{
+        if(!(p instanceof Node)) throw new IllegalArgumentException("Invalid P");
+        Node<E> node = (Node<E>) p; // safe cast
+        if(node.getNext() == null)
+            throw new IllegalArgumentException("P is no longert in the list");
+        return node;
+    }
+    private Position<E> position(Node<E> node){
+        if(node == header || node == trailer)  
+            return null;
+         return node;
+    }
+
+    // public accessor methods
+    public int size() {return size;}
+    public boolean isEmpty(){return size == 0;}
+    public Position<E> first(){return position(header.getNext());}
+    public Position<E> last(){return position(trailer.getPrev());}
+    public Position<E> before(Position<E> p) throws IllegalArgumentException{
+        Node<E> node = validate(p);
+        return position(node.getPrev());
+    }
+    public Position<E> after(Position<E> p) throws IllegalArgumentException{
+        Node<E> node = validate(p);
+        return position(node.getNext());
+
+    }
+
+    // private utils
+    private Position <E> addBetween( E e, Node<E> pred, Node<E> succ ){
+        Node<E> newest = new Node<>(e,pred,succ);
+        pred.setNext(newest);
+        succ.setPrev(newest);
+        size++;
+        return newest;
+    }
+    public Position<E> addFirst(E e){
+        return addBetween(e, header, header.getNext());
+    }
+    public Position<E> addLast(E e){
+        return addBetween(e, trailer.getPrev(), trailer);
+    }
+
+    public Position<E> addAfter(Position<E> p, E e) throws IllegalArgumentException{
+        Node<E> node = validate(p);
+        return addBetween(e, node, node.getNext());
+    }
+    public Position<E> addBefore(Position<E> p, E e) throws IllegalArgumentException{
+        Node<E> node = validate(p);
+        return addBetween(e, node.getPrev(), node);
+
+    }
+
+    public E set(Position<E> p, E e) throws IllegalArgumentException{
+        Node<E> node = validate(p);
+        E answer = node.getElement();
+    }
+
+
+
 }
