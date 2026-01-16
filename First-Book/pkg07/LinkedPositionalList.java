@@ -95,8 +95,22 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
     public E set(Position<E> p, E e) throws IllegalArgumentException{
         Node<E> node = validate(p);
         E answer = node.getElement();
+        node.getElement();
+        return answer;
     }
 
+    public E remove(Position<E> p) throws IllegalArgumentException{
+        Node<E> node = validate(p);
+        Node<E> predecessor = node.getPrev();
+        Node<E> successor = node.getNext();
+        predecessor.setNext(successor);
+        successor.setNext(predecessor);
+        size--;
+        E answer = node.getElement();
+        node.setElement(null);
+        node.setNext(null);
+
+    }
 
 
 }
