@@ -1,4 +1,6 @@
-public interface Tree<E> extends Iterable<E> {
+import java.util.Iterator;
+
+public interface Tree<E> extends Iterable<E>, Iterator<E> {
 
     Position<E> root();
     Position<E> parent(Position<E> p) throws IllegalArgumentException;
@@ -11,8 +13,8 @@ public interface Tree<E> extends Iterable<E> {
     boolean isRoot(Position<E> p) throws IllegalArgumentException;
     int size();
     boolean isEmpty();
-    iterator<E> iterator();
-    iterable<Position<E>> position();
+    Iterator<E> iterator();
+    Iterable<Position<E>> position();
 
 
 
