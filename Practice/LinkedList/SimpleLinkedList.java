@@ -71,9 +71,17 @@ public class SimpleLinkedList<E> {
 
         }
     }
-    // public E getNum(){
+    public E getNum(int pos){
+        int counter = 0;
+        SimpleNode<E> current = head;
 
-    // }
+         for(;counter<pos;counter++){
+                current = current.next;
+            }
+        
+            
+        return current.data;
+    }
 
     public String toString(){
 
@@ -112,7 +120,9 @@ public class SimpleLinkedList<E> {
     public static void main(String[] args) {
         SimpleLinkedList<String> l1 = new SimpleLinkedList<>();
         l1.add("www","22","22");
+        String s = l1.getNum(2).toString();
         System.out.println(l1.toString());
+        System.out.println(s);
     }
 }
 
