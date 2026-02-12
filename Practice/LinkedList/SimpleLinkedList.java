@@ -16,7 +16,8 @@ public class SimpleLinkedList<E> {
             this.next = next;
             this.data = data;
         }
-    }
+    }  
+    // ends
 
 
     private SimpleNode<E> head;
@@ -34,6 +35,85 @@ public class SimpleLinkedList<E> {
 
     }
     public void add(E data){
+        if(head == null){
+
+        }
+
+        SimpleNode<E> addNew = new SimpleNode<E>(data, head);
+        head = addNew;
+
+        if(tail == null){
+            tail = addNew;
+        }
+
+        totalSize++;
+
 
     }
+
+
+    // the add method with var args
+    public void add(E...data){
+        if(head == null){
+
+        }
+
+        for(E e : data){
+        SimpleNode<E> addNew = new SimpleNode<E>(e, head);
+        head = addNew;
+
+        if(tail == null){
+            tail = addNew;
+        }
+
+        totalSize++;
+
+
+        }
+    }
+    // public E getNum(){
+
+    // }
+
+    public String toString(){
+
+
+        /// the entry to this linked list implementation is the head
+        /// so entry must from head to the tail, or until the head is not null
+        /// 
+        if(head == null){
+            return "{}";
+        }
+
+        // referencing the head to move traverse through the list
+        SimpleNode<E> current = head;
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("{");
+
+        while(current != null){
+            outputString.append(current.data);
+
+
+            // if there exist next reference, ie not null then add ',' 
+            if(current.next!=null) 
+                outputString.append(',');
+        
+            current = current.next;
+        }
+        outputString.append("}");
+
+
+        return outputString.toString();
+        }
+
+
+
+    public static void main(String[] args) {
+        SimpleLinkedList<String> l1 = new SimpleLinkedList<>();
+        l1.add("www","22","22");
+        System.out.println(l1.toString());
+    }
 }
+
+
