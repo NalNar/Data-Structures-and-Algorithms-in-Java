@@ -32,10 +32,6 @@ public class BracketMatching {
 
 
 
-        
-
-
-
 
         return s.isEmpty();
     }
