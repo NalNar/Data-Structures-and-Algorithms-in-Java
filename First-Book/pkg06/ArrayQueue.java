@@ -1,5 +1,5 @@
 package pkg06;
 
-public class ArrayQueue {
+public class ArrayQueue<E> implements Queue<E> {
     
 }
