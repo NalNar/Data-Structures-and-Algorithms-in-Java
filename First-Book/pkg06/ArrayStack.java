@@ -102,6 +102,9 @@ public class ArrayStack <E> implements Stack<E>{
 
         return stackToOut;
 
-
     }
+    /**
+     * Max Stack gives the maxium
+     */
+
 }

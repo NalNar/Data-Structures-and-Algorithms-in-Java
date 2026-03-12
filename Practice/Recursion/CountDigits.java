@@ -1,6 +1,6 @@
 package Recursion;
 
-public class rewriteToLoop {
+public class CountDigits {
     /* Rewrite this to interative
      *  public int recur( int n ) {
         if (n < 0 ) throw new IllegalArgumentException ("negative argument detected");
