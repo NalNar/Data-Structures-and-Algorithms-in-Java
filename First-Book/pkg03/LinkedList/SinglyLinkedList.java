@@ -1,14 +1,14 @@
 package pkg03.LinkedList;
 
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList<E extends Comparable<E>>{
 
     private static class Node<E>{
         private E element;
         private Node<E> next;
 
-        public Node(E e, Node<E> n){
-            element = e;
-            next = n;
+        public Node(E data, Node<E> next){
+            element = data;
+            next = next;
         }
         public E getElement(){
             return element;
@@ -72,5 +72,28 @@ public class SinglyLinkedList<E> {
 
         if (size == 0) tail = null;
         return answer;
+    }
+
+    /** 
+     * Generic ordered insertion assuming the linked list is already in sorted order
+     */
+    public void orderedInsertion(E item){
+        Node<E> newNode = new Node<>(item, null);
+        // Case 1: if the head is smaller than item
+        if(head == null || item.compareTo(head.element) < 0){
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        // Case 2: inserting at the middle of the linked list
+        Node<E> current = head;
+        while(current.next != null && current.next.element.compareTo(item) < 0){
+            current = current.next;
+            
+        }
+        // Case 3: inserting at the tail, also works for middle as per latest implementation
+        newNode.next = current.next;
+        current.next = newNode;
     }
 }
