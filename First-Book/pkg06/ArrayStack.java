@@ -1,5 +1,8 @@
 package pkg06;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /** 
  * Array Stack Implementing the Stack ADT
  */
@@ -69,5 +72,36 @@ public class ArrayStack <E> implements Stack<E>{
         data[t] = null;
         t--;
         return answer;
+    }
+
+    /** 
+     * Method to copy Stack A to Stack B, since using the
+     * array implementation the capacity is limited to 1000 elements
+     * @param input stack make a copy
+     * @return copied Stack
+     */
+    public Stack<E> copyStack(Stack<E> stackOne){
+        // using two stack to copy stackone
+        ArrayStack<E> stackTemp = new ArrayStack<>();
+        ArrayStack<E> stackToOut= new ArrayStack<>();
+
+        // idea is fist to transfer all the stack1 to temp to stackout
+        
+        while(!stackOne.isEmpty()){
+            stackTemp.push(stackOne.pop());
+        }
+
+        // now stack temp would be 
+        // for eg abc -> cba
+        while(!stackTemp.isEmpty()){
+            // to restore and revive the element
+            E element = stackTemp.pop();
+            stackToOut.push(element);
+            stackOne.push(element);
+        }
+
+        return stackToOut;
+
+
     }
 }
