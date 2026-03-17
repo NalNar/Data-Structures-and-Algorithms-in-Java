@@ -104,7 +104,7 @@ public class ArrayStack <E> implements Stack<E>{
 
     }
     /**
-     * Max Stack gives the maxium
+     * Max Stack gives the maximum
      */
 
 }
